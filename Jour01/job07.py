@@ -1,0 +1,39 @@
+class Livre:
+    def __init__(self, titre, auteur, nb_pages):
+        self.__titre = titre  # titre du livre
+        self.__auteur = auteur  # nom de l'auteur du livre
+        self.__nb_pages = nb_pages  # nombre de pages du livre
+
+    def get_titre(self):
+        return self.__titre  # retourne le titre du livre
+
+    def set_titre(self, titre):
+        self.__titre = titre  # modifie le titre du livre
+
+    def get_auteur(self):
+        return self.__auteur  # retourne le nom de l'auteur du livre
+
+    def set_auteur(self, auteur):
+        self.__auteur = auteur  # modifie le nom de l'auteur du livre
+
+    def get_nb_pages(self):
+        return self.__nb_pages  # retourne le nombre de pages du livre
+
+    def set_nb_pages(self, nb_pages):
+        # Vérifie si nb_pages est un entier positif
+        if isinstance(nb_pages, int) and nb_pages > 0:
+            self.__nb_pages = nb_pages
+        else:
+            # Affiche un message d'erreur si nb_pages n'est pas un entier positif
+            print("Le nombre de pages doit être un nombre entier positif.")
+
+    def __str__(self):
+        return f"Ce livre s'appelle {self.__titre}, il a été écrit par {self.__auteur} et comporte {self.__nb_pages} pages"
+
+livre = Livre("Le Seigneur des anneaux - La communauté de l'anneau", "J.R.R. Tolkien", 722)
+
+print(livre)
+
+livre.set_nb_pages(745.8) # affiche "Le Seigneur des anneaux - La communauté de l'anneau"*
+
+print(livre)
